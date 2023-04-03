@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400&display=swap');
+
+:root{
+    --success: rgba(0, 128, 0, 0.4);
+    --warning: rgba(255, 157, 0, 0.4);
+    --error: rgba(255, 1, 1, 0.693);
+    --info: rgba(1, 52, 255, 0.693);
+    --main: rgba(5, 5, 5, 0.787);
+
+    --success-light: rgba(0, 128, 0, 0.4);
+    --warning-light: rgba(255, 157, 0, 0.4);
+    --error-light: rgba(255, 1, 1, 0.693);
+    --info-light: rgba(57, 76, 150, 0.693);
+    --main-light: rgba(66, 63, 63, 0.787);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.success{
+    color: var(--success);
+}
+
+.error{
+    color: var(--error);
+}
+
+.warning{
+    color: var(--warning);
+}
+
+.info {
+    color: var(--info);
+}
+
+.main {
+    color: var(--main);
+}
+
+#toasts {
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    max-width: 20%;
+}
+
+.toasts .icon {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 0px;
+}
+
+.toasts .description {
+    padding-left: 30px;
+}
+
+.toasts .description h3{
+    margin: 0;
+}
+
+.toasts {
+    padding: 5px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    border-left: 6px solid var(--success);
+    overflow: hidden;
+    animation: slide_show 2s ease forwards;
+    margin-bottom: 10px;
+    position: relative;
+    left: 6px;
+}
+
+.toasts i {
+    margin: 0 10px;
+    font-size: 15;
+}
+
+.toasts .countdown {
+    background: var(--success);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    animation: countdown 5s ease;
+    z-index: -1;
+}
+
+.toasts .message {
+    z-index: 5;
+}
+
+.toasts.success {
+    border-left: 12px solid var(--success);
+    background: var(--success-light);
+}
+
+.toasts.warning {
+    border-left: 12px solid var(--warning);
+    background: var(--warning-light);
+}
+
+.toasts.error {
+    border-left: 12px solid var(--error);
+    background: var(--error-light);
+}
+
+.toasts.info {
+    border-left: 12px solid var(--info);
+    background: var(--info-light);
+}
+
+.toasts.main {
+    border-left: 12px solid var(--main);
+    background: var(--main-light);
+}
+
+.toasts.success .countdown {
+    background: var(--success);
+}
+
+.toasts.warning .countdown {
+    background: var(--warning);
+}
+
+.toasts.error .countdown {
+    background: var(--error);
+}
+
+.toasts.info .countdown {
+    background: var(--info);
+}
+
+.toasts.main .countdown {
+    background: var(--main);
+}
+
+@keyframes countdown {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes slide_show {
+    0% {
+        transform: translateX(100%);
+    }
+    25% {
+        transform: translateX(-10%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes slide_hide {
+    0% {
+        transform: translateX(-10%);
+    }
+    25% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-10%);
+    }
+    100%{
+        transform: translateX(200%);
+    }
+}
