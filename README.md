@@ -28,11 +28,11 @@ Join our discord today for latest update and faster support:
 ```TriggerClientEvent("mb-notify:client:SendNotify", title, content, duration, type)```
 
 - Available type:
-+ success [green]
-+ warning [orange]
-+ error [red]
-+ info [blue]
-+ main [black]
+`success [green]`
+`warning [orange]`
+`error [red]`
+`info [blue]`
+`main [black]`
 
 # Bugs/Optimise report
 If you find any bugs or have any suggestion, feel free to open an "Issues" on Github or simply join my Discord for support
